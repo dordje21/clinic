@@ -29,13 +29,17 @@ public class Doctor {
 
 
     @Column(name = "email")
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email should be valid")
+    @NotNull(message = "Email is mandatory")
+    @Email(message = "Email must be a valid format (e.g. user@example.com)")
+
     private String email;
 
     @Column(name = "phone")
-    @Size(min=6,message = "must be greater than 6")
-    @Size(max=12,message = "must be less than or equal to 12")
+    @Size(min = 10, max = 15, message = "Phone number must be between 10 and 15 characters long")
+    @Pattern(
+            regexp = "^\\+?[0-9]{10,15}$",
+            message = "Phone number must contain only digits and may start with a plus sign"
+    )
     private String phone;
 
 
