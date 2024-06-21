@@ -34,12 +34,12 @@ public class PatientController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateFormat.setLenient(false);
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+       dateFormat.setLenient(false);
+       binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 
-        StringTrimmerEditor trimmer = new StringTrimmerEditor(true);
-        binder.registerCustomEditor(String.class, trimmer);
+       StringTrimmerEditor trimmer = new StringTrimmerEditor(true);
+       binder.registerCustomEditor(String.class, trimmer);
     }
 
 

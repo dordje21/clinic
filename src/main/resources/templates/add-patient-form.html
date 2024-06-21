@@ -56,6 +56,9 @@
                     <div class="input-block local-forms">
                         <label>Birthday</label>
                         <input type="date" th:field="*{birthday}" required="required"/>
+                        <span th:if="${#fields.hasErrors('birthday')}"
+                              th:errors="*{birthday}"
+                              class="error"></span>
                     </div>
                 </div>
 
