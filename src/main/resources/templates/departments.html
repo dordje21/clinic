@@ -11,12 +11,12 @@
         <div class="col">
             <div class="header-block">
                 <div class="header-block__search">
-                    <h3>Departments List</h3>
+                    <h3>Departments</h3>
                     <div class="input-block local-forms">
                         <input type="text" placeholder="search">
                     </div>
                 </div>
-                <a href="/departments/add" class="btn btn-add">Add department +</a>
+                <a href="/departments/add" class="btn btn-add btn-add-top">Add +</a>
             </div>
             <div id="doctors">
                 <div class="table-responsive custom-table-responsive">
@@ -25,7 +25,6 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Department Name</th>
-                            <th scope="col">Details</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -34,7 +33,6 @@
                         <tr th:each="department, iterStat : ${departmentsPage.content}">
                             <th scope="row" th:text="${iterStat.index + 1 + currentPage * 5}">1</th>
                             <td th:text="${department.departmentName}"></td>
-                            <td><a th:href="@{/departments/{id}(id=${department.id})}">Details</a></td>
                             <td><a th:href="@{/departments/{id}/update(id=${department.id})}">Edit</a></td>
                             <td>
                                 <form th:action="@{/departments/{id}/delete(id=${department.id})}" method="post" style="display:inline;">

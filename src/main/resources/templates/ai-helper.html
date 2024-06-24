@@ -11,17 +11,20 @@
                 <h3>Ai helper</h3>
             </div>
 
-            <div>
-                <textarea id="userInput" rows="4" cols="50" placeholder="Type your message here..."></textarea>
+            <div class="from-row-1">
+                <div class="input-block local-forms">
+                    <textarea id="userInput" rows="4" cols="50" class="ai-textarea" placeholder="Type your message here..."></textarea>
+                </div>
             </div>
-            <div>
-                <button onclick="sendMessage()">Send</button>
+            <div class="from-row-1 ai-res">
+                <button class="btn btn-add" onclick="sendMessage()">Send</button>
             </div>
-            <div>
+            <div class="from-row-1">
                 <h3>Response:</h3>
+            </div>
+            <div class="from-row-1">
                 <p id="responseText"></p>
             </div>
-
             <script>
                 async function sendMessage() {
                     const userInput = document.getElementById("userInput").value;

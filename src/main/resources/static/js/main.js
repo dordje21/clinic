@@ -1,4 +1,5 @@
-document.querySelector('.nav-btn-js').addEventListener('click', () => {
+
+function closeNav() {
     const nav = document.querySelector('.left-nav-js')
     const wrap = document.querySelector('.wrapper')
 
@@ -10,8 +11,22 @@ document.querySelector('.nav-btn-js').addEventListener('click', () => {
 
     document.querySelector('.left-nav-js').classList.add('closed')
     document.querySelector('.wrapper').classList.add('nav-closed')
-})
+}
 
+document.querySelector('.nav-btn-js').addEventListener('click', closeNav)
+
+
+// Function to check the width
+function checkWidth() {
+    if (window.innerWidth < 940) {
+        closeNav()
+    }
+}
+
+// Add event listener for DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    checkWidth();
+});
 
 document.querySelectorAll('.search-by-js').forEach(e => {
     e.addEventListener('input', function() {

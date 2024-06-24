@@ -388,6 +388,25 @@ input {
     column-gap: 20px;
     row-gap: 20px;
 }
+.from-row-1{
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.dashboard-block-full-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.dashboard-block-full p{
+    font-size: 18px;
+    font-weight: bold;
+}
 
 .custom-table-responsive td, th{
     text-align: left;
@@ -498,4 +517,61 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.btn-add-top{
+    width: 50px;
+}
+
+.ai-textarea{
+    box-shadow: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    min-height: 24px;
+    border: 2px solid rgba(46, 55, 164, 0.1);
+    border-radius: 10px;
+    width: calc(100% - 34px);
+    outline: none;
+}
+
+.ai-res{
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 940px) {
+    .header-block .btn-add-top{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    .row.block-4-wrap{
+        flex-direction: column;
+    }
+    .user-data{
+        display: none;
+    }
+    .wrapper{
+        margin-left: 0;
+    }
+    .nav-wrap {
+        width: auto;
+        flex-direction: row-reverse;
+    }
+    .custom-table-responsive{
+        overflow: scroll;
+    }
+    .custom-table-responsive>table{
+        min-width: 650px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+.from-row{
+    grid-template-columns: 1fr;
+}
+.from-row .btn-add{
+    width: 100%;
+    max-width: 100%;
+}
 }

@@ -8,26 +8,32 @@
 <div layout:fragment="content" class="wrapper">
 
     <div class="row dashboard-block-full welcome">
-        <h2>Good Morning</h2>
+        <h2>Good Morning, <span th:text="${username}"></span></h2>
         <p>Have a nice day at work</p>
     </div>
 
     <div class="row block-4-wrap">
-            <div class="dashboard-block-full">
+            <div class="dashboard-block-full dashboard-block-full-1">
                 <h2>Appointments</h2>
-                <p>Welcome to the home page!</p>
+                <img th:src="@{/img/appointment.svg}" width="30" height="30">
+                <p class="info-dash" th:text="${appointments}">0</p>
             </div>
-            <div class="dashboard-block-full">
-                <h2>New Patients</h2>
-                <p>Welcome to the home page!</p>
+            <div class="dashboard-block-full dashboard-block-full-1">
+                <h2>Patients</h2>
+                <img th:src="@{/img/patients.svg}" width="30" height="30">
+                <p class="info-dash" th:text="${patients}">0</p>
             </div>
-            <div class="dashboard-block-full">
-                <h2>Operations</h2>
-                <p>Welcome to the home page!</p>
+            <div class="dashboard-block-full dashboard-block-full-1">
+                <h2>Doctors</h2>
+                <img th:src="@{/img/doctor.svg}" width="30" height="30">
+                <p class="info-dash" th:text="${doctors}">0</p>
             </div>
-            <div class="dashboard-block-full">
-                <h2>Earnings</h2>
-                <p>Welcome to the home page!</p>
+            <div class="dashboard-block-full dashboard-block-full-1">
+                <h2>Ai Helper</h2>
+                <img th:src="@{/img/ai.svg}" width="30" height="30">
+                <p>
+                    <a href="/ai-helper">Open Ai</a>
+                </p>
             </div>
     </div>
 

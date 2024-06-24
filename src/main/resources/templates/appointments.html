@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Patients</title>
+    <title>Appointment</title>
 </head>
 <body>
 <div layout:fragment="content" class="wrapper">
@@ -11,12 +11,12 @@
         <div class="col">
             <div class="header-block">
                 <div class="header-block__search">
-                    <h3>Patients List</h3>
+                    <h3>Appointment</h3>
                     <div class="input-block local-forms">
                         <input type="text" placeholder="search">
                     </div>
                 </div>
-                <a href="/appointments/add" class="btn btn-add">Add appointment +</a>
+                <a href="/appointments/add" class="btn btn-add btn-add-top">Add +</a>
             </div>
             <div id="doctors">
                 <div class="table-responsive custom-table-responsive">
