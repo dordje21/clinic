@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,16 +29,23 @@ public class Patient {
     private String lastName;
 
     @Column(name = "email")
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email should be valid")
+    @NotNull(message = "Email is mandatory")
+    @Email(message = "Email must be a valid format (e.g. user@example.com)")
+
     private String email;
 
     @Column(name = "phone")
-    @Size(min=6,message = "must be greater than 6")
-    @Size(max=12,message = "must be less than or equal to 12")
+    @Size(min = 10, max = 15, message = "Phone number must be between 10 and 15 characters long")
+    @Pattern(
+            regexp = "^\\+?[0-9]{10,15}$",
+            message = "Phone number must contain only digits and may start with a plus sign"
+    )
     private String phone;
 
     @Column(name = "birthday")
+    @NotNull(message = "Birth date is mandatory")
+    @Past(message = "Birth date must be in the past")
+
     private Date birthday;
 
     @ManyToOne
